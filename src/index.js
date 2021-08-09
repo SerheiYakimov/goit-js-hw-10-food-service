@@ -8,5 +8,6 @@ const menu = document.querySelector('.js-menu');
 
 
 const markup = menuList.map(menuTemplate).join('');
+
 // console.log(markup);
 menu.insertAdjacentHTML('beforeend', markup);
