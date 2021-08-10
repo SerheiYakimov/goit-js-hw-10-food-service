@@ -20,18 +20,18 @@ const Theme = {
     DARK: 'dark-theme',
   };
 
-  themeSwitch.addEventListener('change', onThemeChange);
+  // themeSwitch.addEventListener('change', onThemeChange);
 
-  function onThemeChange(e) {
+  // function onThemeChange(e) {
 
-    console.log(e.target);
-    e.preventDefault();
-      if (e.target.checked === true) {
-        body.classList.toggle('.dark-theme');
+  //   console.log(e.target);
+  //   e.preventDefault();
+  //     if (e.target.checked === true) {
+  //       body.classList.toggle('.dark-theme');
           
-      }
+  //     }
 
-  }
+  // }
 
   // const dataforStorage = JSON.stringify(Theme);
   // localStorage.setItem("Theme", dataforStorage);
@@ -43,11 +43,13 @@ const Theme = {
   console.log('storageTheme', storageTheme);
   // console.log('currentTheme', currentTheme);
 
-  if (storageTheme === null) {
-    localStorage.setItem("Theme", JSON.stringify(Theme.LIGHT));
-    body.classList.toggle('light-theme');
-  };
-  console.log('storageTheme', storageTheme);
+  // let currentTheme = null;
+
+  // if (storageTheme === null) {
+  //   localStorage.setItem("Theme", JSON.stringify(Theme.LIGHT));
+  //   body.classList.toggle('light-theme');
+  // };
+  // console.log('storageTheme', storageTheme);
 
  
 
