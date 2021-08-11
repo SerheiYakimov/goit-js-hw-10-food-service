@@ -2,8 +2,6 @@ import menuTemplate from './templates/menu-tps.hbs';
 import menuList from './menu.json';
 import './styles.css';
 
-// console.log(menuTemplate);
-// console.log(menuList);
 
 const menu = document.querySelector('.js-menu');
 const themeSwitch = document.querySelector('#theme-switch-toggle');
@@ -12,7 +10,7 @@ const body = document.querySelector('body');
 
 const markup = menuList.map(menuTemplate).join('');
 
-// console.log(markup);
+
 menu.insertAdjacentHTML('beforeend', markup);
 
 const Theme = {
@@ -43,7 +41,6 @@ const Theme = {
     
   };
   
-
   function onThemeChange(e) {
       
       if (e.target.checked) {
