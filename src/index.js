@@ -20,36 +20,50 @@ const Theme = {
     DARK: 'dark-theme',
   };
 
-  // themeSwitch.addEventListener('change', onThemeChange);
+  themeSwitch.addEventListener('change', onThemeChange);
 
-  // function onThemeChange(e) {
+  //  Проверка на первое вхождение на сайт, есть ли данные в localeStorage
+  const currentTheme = (JSON.parse(localStorage.getItem("Theme")));
+  
+  console.log('currentTheme', currentTheme);
+ 
+  if (currentTheme === null || currentTheme === "light-theme") {
+    themeSwitch.checked === false;
+    localStorage.setItem("Theme", JSON.stringify(Theme.LIGHT));
+    body.classList.add('light-theme');
 
-  //   console.log(e.target);
-  //   e.preventDefault();
-  //     if (e.target.checked === true) {
-  //       body.classList.toggle('.dark-theme');
-          
-  //     }
+    
+  }  
 
-  // }
+  
+  if (currentTheme === "dark-theme") {
+    themeSwitch.checked = true;
+    localStorage.setItem("Theme", JSON.stringify(Theme.DARK));
+      body.classList.add('dark-theme');
+    
+  };
+  
 
-  // const dataforStorage = JSON.stringify(Theme);
-  // localStorage.setItem("Theme", dataforStorage);
-  // const data = localStorage.getItem("Theme");
-  // console.log('data', JSON.parse(data));
-//  Проверка на первое вхождение на сайт, есть ли данные в localeStorage
-  const storageTheme = (JSON.parse(localStorage.getItem("Theme")));
-  // const currentTheme = storageTheme ? localStorage.setItem(JSON.stringify(Theme)) : storageTheme;
-  console.log('storageTheme', storageTheme);
-  // console.log('currentTheme', currentTheme);
+  function onThemeChange(e) {
+      
+      if (e.target.checked) {
+      
+      localStorage.setItem("Theme", JSON.stringify(Theme.DARK));
+      body.classList.replace('light-theme', 'dark-theme');
+      }
+      else {
+        localStorage.setItem("Theme", JSON.stringify(Theme.LIGHT));
+        body.classList.replace('dark-theme', 'light-theme');
+      }
 
-  // let currentTheme = null;
+  }
 
-  // if (storageTheme === null) {
-  //   localStorage.setItem("Theme", JSON.stringify(Theme.LIGHT));
-  //   body.classList.toggle('light-theme');
-  // };
-  // console.log('storageTheme', storageTheme);
+  
+
+
+
+
+  
 
  
 
